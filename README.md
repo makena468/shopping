@@ -18,8 +18,8 @@ How to run the Online Shopping Portal using PHP and MySQL
 
 *************Login Details For User***************
 
-Username : benjaminmakena0@gmail.com
-Password : Makenna@1234
+Username : johndeo@gmail.com
+Password : Test@123
 
 OR register a new user.
 
