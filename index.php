@@ -121,7 +121,7 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 				<div class="info-box">
 					<div class="row">
 						<div class="col-xs-2">
-						     <i class="https://icons8.com/icons/set/kenya-flag"></i>
+						     <i class="icon fa fa-shield"></i>
 						</div>
 						<div class="col-xs-10">
 							<h4 class="info-box-heading green">money back</h4>

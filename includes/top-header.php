@@ -29,7 +29,7 @@ $displayName = $_SESSION['username'] ?? 'User';
 <div class="cnt-block">
 				<ul class="list-unstyled list-inline">
 					<li class="dropdown dropdown-small">
-						<a href="track-orders.php" class="dropdown-toggle" ><span class="key">Track Order</b></a>
+						<a href="track-orders.php" class="dropdown-toggle"><span class="key">Track Order</span></a>
 					</li>
 				</ul>
 			</div>
