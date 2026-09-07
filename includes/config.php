@@ -91,5 +91,43 @@ if (!function_exists('ensureOrdersTableColumns')) {
     }
 }
 
+if (!function_exists('ensureTableColumns')) {
+    function ensureTableColumns($conn, $table, $requiredColumns) {
+        if (!$conn) {
+            return;
+        }
+
+        $table = preg_replace('/[^a-zA-Z0-9_]/', '', $table);
+        $result = mysqli_query($conn, 'SHOW COLUMNS FROM `' . $table . '`');
+        if (!$result) {
+            return;
+        }
+
+        $columns = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+            $columns[] = $row['Field'];
+        }
+        mysqli_free_result($result);
+
+        foreach ($requiredColumns as $column => $definition) {
+            if (!in_array($column, $columns, true)) {
+                mysqli_query($conn, 'ALTER TABLE `' . $table . '` ADD COLUMN `' . $column . '` ' . $definition);
+            }
+        }
+    }
+}
+
 ensureOrdersTableColumns($con);
+ensureTableColumns($con, 'admin', [
+    'contactNumber' => 'VARCHAR(50) NULL DEFAULT NULL',
+]);
+ensureTableColumns($con, 'category', [
+    'createdBy' => 'INT(11) NULL DEFAULT NULL',
+]);
+ensureTableColumns($con, 'subcategory', [
+    'createdBy' => 'INT(11) NULL DEFAULT NULL',
+]);
+ensureTableColumns($con, 'products', [
+    'addedBy' => 'INT(11) NULL DEFAULT NULL',
+]);
 ?>

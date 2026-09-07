@@ -173,7 +173,7 @@ echo "<script>window.location.href='manage-subcategories.php'</script>";
                                         </tr>
                                     </tfoot>
                                     <tbody>
-<?php $query=mysqli_query($con,"select category.categoryName,subcategory.subcategoryName as subcatname,subcategory.creationDate,subcategory.updationDate,subcategory.id as subid,tbladmin.username from subcategory join category on subcategory.categoryid=category.id join tbladmin on tbladmin.id=subcategory.createdBy");
+<?php $query=mysqli_query($con,"select category.categoryName,subcategory.subcategory as subcatname,subcategory.creationDate,subcategory.updationDate,subcategory.id as subid,admin.username from subcategory join category on subcategory.categoryid=category.id left join admin on admin.id=subcategory.createdBy");
 $cnt=1;
 while($row=mysqli_fetch_array($query))
 {

@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
 {
 $contactno=$_POST['cnumber'];
 $id=intval($_SESSION["aid"]);
-$sql=mysqli_query($con,"update tbladmin set contactNumber='$contactno' where id='$id'");
+$sql=mysqli_query($con,"update admin set contactNumber='$contactno' where id='$id'");
 echo "<script>alert('Profile Updated successfully');</script>";
 echo "<script>window.location.href='admin-profile.php'</script>";
 }
@@ -49,7 +49,7 @@ echo "<script>window.location.href='admin-profile.php'</script>";
                             <div class="card-body">
 <?php
 $id=intval($_SESSION["aid"]);
-$query=mysqli_query($con,"select * from tbladmin where id='$id'");
+$query=mysqli_query($con,"select * from admin where id='$id'");
 while($row=mysqli_fetch_array($query))
 {
 ?>	                            	

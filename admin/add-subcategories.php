@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
 $category=$_POST['category'];
 $subcat=$_POST['subcategory'];
 $createdby=$_SESSION['aid'];
-$sql=mysqli_query($con,"insert into subcategory(categoryid,subcategoryName,createdBy) values('$category','$subcat','$createdby')");
+$sql=mysqli_query($con,"insert into subcategory(categoryid,subcategory,createdBy) values('$category','$subcat','$createdby')");
 echo "<script>alert('Sub-Category added successfully');</script>";
 echo "<script>window.location.href='manage-subcategories.php'</script>";
 

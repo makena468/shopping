@@ -15,11 +15,11 @@ if(isset($_POST['submit']))
 $username=$_POST['username'];
 $cnumber=$_POST['contactno'];
 $newpassword=md5($_POST['inputPassword']);
-$ret=mysqli_query($con,"SELECT id FROM tbladmin WHERE username='$username' and contactNumber='$cnumber'");
+$ret=mysqli_query($con,"SELECT id FROM admin WHERE username='$username' and contactNumber='$cnumber'");
 $num=mysqli_num_rows($ret);
 if($num>0)
 {
-$query=mysqli_query($con,"update tbladmin set password='$newpassword' WHERE username='$username' and contactNumber='$cnumber'");
+$query=mysqli_query($con,"update admin set password='$newpassword' WHERE username='$username' and contactNumber='$cnumber'");
 
 echo "<script>alert('Password reset successfully.');</script>";
 echo "<script type='text/javascript'> document.location ='index.php'; </script>";

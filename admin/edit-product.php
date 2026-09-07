@@ -193,7 +193,7 @@ function getSubcat(val) {
 
 <?php 
 $pid=intval($_GET['id']);
-$query=mysqli_query($con,"select products.id as pid,products.productImage1,products.productImage2,products.productImage3,products.productName,category.categoryName,subcategory.subcategoryName as subcatname,products.postingDate,products.updationDate,subcategory.id as subid,tbladmin.username,category.id as catid,products.productCompany,products.productPrice,products.productPriceBeforeDiscount,products.productAvailability,products.productDescription,products.shippingCharge from products join subcategory on products.subCategory=subCategory.id join category on products.category=category.id join tbladmin on tbladmin.id=products.addedBy where  products.id='$pid' order by pid desc");
+$query=mysqli_query($con,"select products.id as pid,products.productImage1,products.productImage2,products.productImage3,products.productName,category.categoryName,subcategory.subcategory as subcatname,products.postingDate,products.updationDate,subcategory.id as subid,admin.username,category.id as catid,products.productCompany,products.productPrice,products.productPriceBeforeDiscount,products.productAvailability,products.productDescription,products.shippingCharge from products join subcategory on products.subCategory=subcategory.id join category on products.category=category.id join admin on admin.id=products.addedBy where products.id='$pid' order by pid desc");
 while($row=mysqli_fetch_array($query))
 {
 ?>                                 

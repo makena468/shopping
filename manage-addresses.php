@@ -26,7 +26,7 @@ $sstate=$_POST['sstate'];
 $spincode=$_POST['spincode'];
 $scountry=$_POST['scountry'];
 
-$sql=mysqli_query($con,"insert into addresses(userId,billingAddress,biilingCity,billingState,billingPincode,billingCountry,shippingAddress,shippingCity,shippingState,shippingPincode,shippingCountry) values('$uid','$baddress','$bcity','$bstate','$bpincode','$bcountry','$saddress','$scity','$sstate','$spincode','$scountry')");
+$sql=mysqli_query($con,"insert into addresses(userId,billingAddress,billingCity,billingState,billingPincode,billingCountry,shippingAddress,shippingCity,shippingState,shippingPincode,shippingCountry) values('$uid','$baddress','$bcity','$bstate','$bpincode','$bcountry','$saddress','$scity','$sstate','$spincode','$scountry')");
 if($sql)
 {
     echo "<script>alert('You Address added successfully');</script>";
@@ -218,7 +218,7 @@ else:
                 <tr>
             
                     <td width="250"><?php echo $result['billingAddress'];?></td>
-                    <td><?php echo $result['biilingCity'];?></td>
+                    <td><?php echo $result['billingCity'];?></td>
                     <td><?php echo $result['billingState'];?></td>
                     <td><?php echo $result['billingPincode'];?></td>
                     <td><?php echo $result['billingCountry'];?></td>

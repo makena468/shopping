@@ -170,7 +170,7 @@ echo "<script>window.location.href='manage-categories.php'</script>";
                                         </tr>
                                     </tfoot>
                                     <tbody>
-<?php $query=mysqli_query($con,"select category.id as catid,category.categoryName,category.categoryDescription,category.creationDate,category.updationDate,tbladmin.username from category join tbladmin on tbladmin.id=category.createdBy");
+<?php $query=mysqli_query($con,"select category.id as catid,category.categoryName,category.categoryDescription,category.creationDate,category.updationDate,admin.username from category left join admin on admin.id=category.createdBy");
 $cnt=1;
 while($row=mysqli_fetch_array($query))
 {

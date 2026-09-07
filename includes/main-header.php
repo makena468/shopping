@@ -1,8 +1,9 @@
-<?php 
+<?php
+require_once __DIR__ . '/config.php';
 
- if(isset($_Get['action'])){
+ if(isset($_GET['action'])){
 		if(!empty($_SESSION['cart'])){
-		foreach($_POST['quantity'] as $key => $val){
+		foreach($_POST['quantity'] ?? [] as $key => $val){
 			if($val==0){
 				unset($_SESSION['cart'][$key]);
 			}else{
